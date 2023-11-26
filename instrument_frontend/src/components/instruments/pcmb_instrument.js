@@ -433,24 +433,20 @@ class Pcmb_instrument extends Component {
             </div>
             <div className="row" style={{ width: 1400 }}>
               <div className="col-4">
-                <div className="card" style={{ height: 280 }}>
+                <div className="card" style={{ height: 350 }}>
                   <div className="card-body register-card-body">
                     <h2 style={{ textAlign: "center" }}>Heidanhain</h2>
 
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <script src="index.js"></script>
                       <input
                         ref={(input) => {
                           this.input_LG_TTL = input;
                         }}
-                        maxLength={5}
                         value={this.state.TOTAL_LG}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="LG_TTL"
                         onChange={async (e) => {
                           this.setState(
@@ -468,18 +464,15 @@ class Pcmb_instrument extends Component {
                         <div className="input-group-text"></div>
                       </div>
                     </div>
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_LG_OD = input;
                         }}
                         value={this.state.LG_STEP_OD}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="LG_OD"
                         onChange={(e) => {
                           this.setState(
@@ -496,18 +489,15 @@ class Pcmb_instrument extends Component {
                         <div className="input-group-text"></div>
                       </div>
                     </div>
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_LG_ID = input;
                         }}
                         value={this.state.LG_STEP_ID_CP}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="LG_ID"
                         onChange={(e) => {
                           this.setState(
@@ -543,22 +533,19 @@ class Pcmb_instrument extends Component {
                 </div>
               </div>
               <div className="col-4">
-                <div className="card" style={{ height: 280 }}>
+                <div className="card" style={{ height: 350 }}>
                   <div className="card-body register-card-body">
                     <h2 style={{ textAlign: "center" }}>Air gauge</h2>
 
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_ID_TOP = input;
                         }}
                         value={this.state.ID_TOP}
+                        style={{ height: 60, fontSize: 30 }}
                         type="text"
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="ID_TOP"
                         onChange={(e) => {
                           this.setState(
@@ -575,18 +562,15 @@ class Pcmb_instrument extends Component {
                         <div className="input-group-text"></div>
                       </div>
                     </div>
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_ID_BOTTOM = input;
                         }}
                         value={this.state.ID_BOTTOM}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="ID_BOTTOM"
                         onChange={(e) => {
                           this.setState(
@@ -624,21 +608,9 @@ class Pcmb_instrument extends Component {
                     </div>
                     <div
                       className="input-group mb-3"
-                      style={{ height: 35 }}
+                      style={{ height: 60, fontSize: 30 }}
                     ></div>
                     <div className="row">
-                      {/* <div className="col-6">
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-block"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            this.doRecord();
-                          }}
-                        >
-                          Submit
-                        </button>
-                      </div> */}
                       <div className="col-6">
                         <button
                           type="submit"
@@ -656,22 +628,19 @@ class Pcmb_instrument extends Component {
                 </div>
               </div>
               <div className="col-4">
-                <div className="card" style={{ height: 280 }}>
+                <div className="card" style={{ height: 350 }}>
                   <div className="card-body register-card-body">
                     <h2 style={{ textAlign: "center" }}>TM-X5000</h2>
 
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_OD1 = input;
                         }}
                         value={this.state.OD1}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="OD1"
                         onChange={(e) => {
                           this.setState(
@@ -688,10 +657,7 @@ class Pcmb_instrument extends Component {
                         <div className="input-group-text"></div>
                       </div>
                     </div>
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_OD2 = input;
@@ -699,8 +665,8 @@ class Pcmb_instrument extends Component {
                         onKeyPress={this.OD3_KeyPress} //Go next input
                         value={this.state.OD2}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="OD2"
                         onChange={(e) => {
                           this.setState(
@@ -717,18 +683,15 @@ class Pcmb_instrument extends Component {
                         <div className="input-group-text"></div>
                       </div>
                     </div>
-                    <div
-                      className="input-group mb-3"
-                      style={{ height: 35, fontSize: 22 }}
-                    >
+                    <div className="input-group mb-3">
                       <input
                         ref={(input) => {
                           this.input_OD3 = input;
                         }}
                         value={this.state.OD3}
                         type="text"
+                        style={{ height: 60, fontSize: 30 }}
                         className="form-control"
-                        style={{ fontSize: 22 }}
                         placeholder="OD3"
                         onChange={(e) => {
                           this.setState(
@@ -749,9 +712,6 @@ class Pcmb_instrument extends Component {
                     <div className="row">
                       <div className="col-6">
                         <button
-                          // ref={(input) => {
-                          //   this.input_submit = input;
-                          // }}
                           type="submit"
                           className="btn btn-danger btn-block"
                           onClick={(e) => {
@@ -809,3 +769,4 @@ class Pcmb_instrument extends Component {
 }
 
 export default Pcmb_instrument;
+

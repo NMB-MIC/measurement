@@ -24,6 +24,8 @@ class Pcmb_instrument extends Component {
       OD1: "",
       OD2: "",
       OD3: "",
+
+      password: "",
     };
   }
 
@@ -135,6 +137,12 @@ class Pcmb_instrument extends Component {
     });
   }
 
+  clearUser() {
+    this.setState({
+      password: "",
+    });
+  }
+
   MACHINE_KeyPress = async () => {
     {
       this.machine.focus();
@@ -195,11 +203,7 @@ class Pcmb_instrument extends Component {
     this.input_submit.focus();
   };
 
-  // clear_heidan_KeyPress = async () => {
-  //   {
-  //     this.TOTAL_LG.focus();
-  //   }
-  // };
+
 
   doconfirm = async () => {
     try {
@@ -208,56 +212,6 @@ class Pcmb_instrument extends Component {
         this.state
       );
       console.log("Max", submit_result_master);
-      // TOTAL_LG
-      //   const TOTAL_LG_Max = submit_result_master.data.result_TOTAL_LG;
-      // this.setState({
-      //   master_TOTAL_LG_Max: submit_result_master.data.result_TOTAL_LG,
-      // });
-      // const TOTAL_LG_MIN = (await submit_result).data.result_TOTAL_LG.min;
-      // this.setState({ master_TOTAL_LG_MIN: TOTAL_LG_MIN });
-      // const TOTAL_LG = this.state.TOTAL_LG;
-
-      //   LG_STEP_OD
-      // const LG_STEP_OD_Max = (await submit_result).data.result_LG_STEP_OD.max;
-      // this.setState({ master_LG_STEP_OD_Max: LG_STEP_OD_Max });
-
-      // const LG_STEP_OD_MIN = (await submit_result).data.result_LG_STEP_OD.min;
-      // this.setState({ master_LG_STEP_OD_MIN: LG_STEP_OD_MIN });
-      // const LG_STEP_OD = this.state.LG_STEP_OD;
-
-      //   LG_STEP_ID_CP
-      // const LG_STEP_ID_CP_Max = (await submit_result).data.result_LG_STEP_ID_CP
-      //   .max;
-      // this.setState({ master_LG_STEP_ID_CP_Max: LG_STEP_ID_CP_Max });
-
-      // const LG_STEP_ID_CP_MIN = (await submit_result).data.result_LG_STEP_ID_CP
-      //   .min;
-
-      // this.setState({ master_LG_STEP_ID_CP_MIN: LG_STEP_ID_CP_MIN });
-      // const LG_STEP_ID_CP = this.state.LG_STEP_ID_CP;
-
-      //   console.log("test1", TOTAL_LG_Max);
-      //console.log(typeof TOTAL_LG);
-
-      // if (TOTAL_LG < TOTAL_LG_Max && TOTAL_LG > TOTAL_LG_MIN) {
-      //   return;
-      // } else if (LG_STEP_OD < LG_STEP_OD_Max && LG_STEP_OD > LG_STEP_OD_MIN) {
-      //   return;
-      // } else if (
-      //   LG_STEP_ID_CP < LG_STEP_ID_CP_Max &&
-      //   LG_STEP_ID_CP > LG_STEP_ID_CP_MIN
-      // ) {
-      //   return;
-      // } else {
-      //   await Swal.fire({
-      //     icon: "warning",
-      //     title: "Data over Range",
-      //     text: "ข้อมูลเกินค่าควบคุม !!!!",
-      //     showConfirmButton: false,
-      //     timer: 4000,
-      //   });
-      //   this.clearHeidan();
-      // }
     } catch (error) {
       return {
         result: "Failed",
@@ -307,7 +261,8 @@ class Pcmb_instrument extends Component {
             showConfirmButton: false,
             timer: 2000,
           });
-          window.location.replace("./pcmb_instrument");
+          return this.clearUser();
+       
         } else {
           let insert_result = await httpClient.post(
             server.INSERT_DATA_URL,
@@ -769,4 +724,3 @@ class Pcmb_instrument extends Component {
 }
 
 export default Pcmb_instrument;
-
